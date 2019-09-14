@@ -1,17 +1,8 @@
 import React, { useState } from 'react';
-import { makeStyles } from '@material-ui/core/styles';
 import Grid from '@material-ui/core/Grid';
 import TextField from '@material-ui/core/TextField';
 import Button from '@material-ui/core/Button';
-
-const useStyles = makeStyles(() => ({
-  itemInput: {
-    width: '100%',
-  },
-  button: {
-    width: '100%',
-  },
-}));
+import useStyles from './styles';
 
 export default function ItemForm({ showDeleteButton, onAdd, onDelete }) {
   const classes = useStyles();

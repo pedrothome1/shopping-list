@@ -53,6 +53,10 @@ export default function ShoppingListContainer() {
   }
 
   function handleItemQuantityChange(item, newQuantity) {
+    if (newQuantity < 1) {
+      return;
+    }
+
     item.quantity = newQuantity;
 
     const updatedItems = items.slice();

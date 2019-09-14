@@ -1,21 +1,11 @@
 import React, { useEffect } from 'react';
-import { makeStyles } from '@material-ui/core/styles';
 import Container from '@material-ui/core/Container';
 import Paper from '@material-ui/core/Paper';
 import Toolbar from '@material-ui/core/Toolbar';
 import Typography from '@material-ui/core/Typography';
 import ItemTable from './item-table';
 import ItemForm from './item-form';
-
-const useStyles = makeStyles(theme => ({
-  container: {
-    marginTop: theme.spacing(2),
-    marginBottom: theme.spacing(2),
-  },
-  paper: {
-    marginBottom: theme.spacing(2),
-  },
-}));
+import useStyles from './styles';
 
 export default function ShoppingListView({
   items,

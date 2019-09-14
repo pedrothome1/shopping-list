@@ -1,18 +1,13 @@
 import React from 'react';
-import { makeStyles } from '@material-ui/core/styles';
 import Table from '@material-ui/core/Table';
 import TableHead from '@material-ui/core/TableHead';
 import TableBody from '@material-ui/core/TableBody';
 import TableRow from '@material-ui/core/TableRow';
 import TableCell from '@material-ui/core/TableCell';
-import TextField from '@material-ui/core/TextField';
 import Checkbox from '@material-ui/core/Checkbox';
-
-const useStyles = makeStyles(() => ({
-  quantityTh: {
-    width: '50px',
-  },
-}));
+import Box from '@material-ui/core/Box';
+import useStyles from './styles';
+import MinusPlus from '../../minus-plus';
 
 export default function ItemTable({
   items,
@@ -38,8 +33,8 @@ export default function ItemTable({
     }
   }
 
-  function handleItemQuantityChange(item, event) {
-    onItemQuantityChange(item, event.target.value);
+  function handleItemQuantityChange(item, value) {
+    onItemQuantityChange(item, value);
   }
 
   function renderRows() {
@@ -59,13 +54,15 @@ export default function ItemTable({
             onChange={event => handleItemCheckboxChange(item, event)}
           />
         </TableCell>
-        <TableCell>{item.name}</TableCell>
-        <TableCell>
-          <TextField
-            type="number"
-            value={item.quantity}
-            onChange={event => handleItemQuantityChange(item, event)}
-          />
+        <TableCell className={classes.nameTd}>{item.name}</TableCell>
+        <TableCell className={classes.quantityTd}>
+          <Box className={classes.minusPlusCellContainer}>
+            <MinusPlus
+              value={item.quantity}
+              onChange={value => handleItemQuantityChange(item, value)}
+              disableLeftButton={item.quantity === 1}
+            />
+          </Box>
         </TableCell>
       </TableRow>
     ));
