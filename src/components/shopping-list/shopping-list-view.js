@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import Container from '@material-ui/core/Container';
 import Paper from '@material-ui/core/Paper';
@@ -27,6 +27,8 @@ export default function ShoppingListView({
   onDelete,
 }) {
   const classes = useStyles();
+
+  useEffect(() => window.scrollTo(0, document.body.scrollHeight));
 
   return (
     <Container className={classes.container}>

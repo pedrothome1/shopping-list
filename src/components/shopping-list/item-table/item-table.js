@@ -43,6 +43,14 @@ export default function ItemTable({
   }
 
   function renderRows() {
+    if (items.length === 0) {
+      return (
+        <TableRow>
+          <TableCell colSpan={3}>There are no items yet.</TableCell>
+        </TableRow>
+      );
+    }
+
     return items.map(item => (
       <TableRow key={item.id}>
         <TableCell padding="checkbox">
