@@ -8,18 +8,18 @@ import useStyles from './styles';
 export default function MinusPlus({ value, onChange, disableLeftButton }) {
   const classes = useStyles();
 
-  function handleMinus() {
+  function handleMinusClick() {
     onChange(value - 1);
   }
 
-  function handlePlus() {
+  function handlePlusClick() {
     onChange(value + 1);
   }
 
   return (
     <Box component="span" className={classes.box}>
       <Button
-        onClick={handleMinus}
+        onClick={handleMinusClick}
         className={classes.buttonLeft}
         disabled={disableLeftButton}
         size="small"
@@ -32,7 +32,7 @@ export default function MinusPlus({ value, onChange, disableLeftButton }) {
         {value}
       </Box>
       <Button
-        onClick={handlePlus}
+        onClick={handlePlusClick}
         className={classes.buttonRight}
         size="small"
         variant="contained"
