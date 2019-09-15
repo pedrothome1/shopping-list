@@ -29,6 +29,12 @@ $ npm install
 $ yarn start
 ```
 
+or
+
+```bash
+$ npm run start
+```
+
 ## Built with
 
 - [ReactJS](https://reactjs.org/) - A JavaScript library for building user interfaces;
