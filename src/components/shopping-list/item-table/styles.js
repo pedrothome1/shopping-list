@@ -3,7 +3,6 @@ import { makeStyles } from '@material-ui/core/styles';
 export default makeStyles(() => ({
   quantityTh: {
     width: '160px',
-    textAlign: 'right',
   },
   nameTd: {
     width: '100%',

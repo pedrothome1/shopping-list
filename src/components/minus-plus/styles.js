@@ -17,13 +17,11 @@ export default makeStyles(() => ({
     borderTopRightRadius: 0,
     borderBottomRightRadius: 0,
     boxShadow: 'none',
-    // padding: 0,
   },
   buttonRight: {
     minWidth: '35px',
     borderTopLeftRadius: 0,
     borderBottomLeftRadius: 0,
     boxShadow: 'none',
-    // padding: 0,
   },
 }));
